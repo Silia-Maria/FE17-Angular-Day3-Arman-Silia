@@ -14,7 +14,7 @@ export const products = [
     {
         name: "Adidog Sweater",
         price: 50,
-        description: "Perfect Sport Sweater for your dog",
+        description: "Stylish sweater for your dog",
         image: "https://hundepullover.org/wp-content/uploads/2017/05/hundepullover-adidog-423x381.jpg"
     }
 ]
