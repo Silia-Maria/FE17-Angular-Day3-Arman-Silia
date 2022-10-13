@@ -1,0 +1,132 @@
+<!-- Form Container -->
+<div class="container">
+
+    <form [formGroup]="info" (ngSubmit)="onSubmit()">
+
+        <!-- First Form Start-->
+
+        <!-- Left Side -->
+
+        <div class="border border-dark rounded px-5 my-5 pb-3">
+
+            <h3 class="mt-3 mb-5 text-center">Enter your Shipping details!</h3>
+            <div class="d-flex justify-content-between mx-5">
+                <div class="split">
+                    <label for="firstName" class="form-label">First Name *</label>
+                    <input type="text" id="firstName" class="form-control" formControlName="firstName">
+
+                    <div>
+                        <label for="country">Country of residence *</label>
+                        <select class="form-select my-2" id="country" formControlName="country" aria-label="Austria">
+                        <option value="Austria" selected>Austria</option>
+                        <option>Germany</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Croatia">Croatia</option>
+                      </select>
+                    </div>
+
+                    <label for="adress" class="form-label">Adress *</label>
+                    <input type="text" id="adress" class="form-control" formControlName="adress">
+
+                    <label for="zip" class="form-label">ZIP-Code *</label>
+                    <input type="text" id="zip" class="form-control" formControlName="zip">
+
+                    <div>
+                        <label for="state">State *</label>
+                        <select class="form-select my-2" id="state" formControlName="state">
+                        <option value="1" selected>--</option>
+                        <option>Burgenland</option>
+                        <option value="2">Wien</option>
+                        <option value="3">Salzburg</option>
+                        <option value="4">Lower Austria</option>
+                      </select>
+                    </div>
+
+
+                    <div>
+                        <label for="area-code">Area Code *</label>
+                        <select class="form-select smallinput" id="area-code" formControlName="areaCode">
+                            <option value="1" selected>+43</option>
+                            <option>+55</option>
+                            <option value="2">+56</option>
+                            <option value="3">+12</option>
+                            <option value="4">+49</option>
+                          </select>
+                    </div>
+
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="split">
+                    <label for="last-name" class="form-label">Last Name *</label>
+                    <input type="text" id="last-name" class="form-control" formControlName="lastName">
+
+                    <label for="house-number" class="form-label marginLast">House Number *</label>
+                    <input type="text" id="house-number" class="form-control" formControlName="houseNumber">
+
+                    <label for="city" class="form-label">City *</label>
+                    <input type="text" id="city" class="form-control" formControlName="city">
+
+                    <label for="email" class="form-label">Email-address *</label>
+                    <input type="text" id="email" class="form-control" formControlName="email">
+
+                    <label for="number" class="form-label">Contact Number</label>
+                    <input type="text" id="number" class="form-control" formControlName="number">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 
+            -------------
+            Second Form 
+            --------------
+        -->
+
+        <div class="border border-dark rounded px-5 my-5 pb-3">
+
+            <div class="text-center mb-5">
+                <h3 class="my-3 ">How would you like to pay?</h3>
+                <div class="ms-5 ">
+                    <i class="fa-brands fa-cc-visa me-3 "></i>
+                    <i class="fa-brands fa-cc-mastercard me-3 "></i>
+                    <i class="fa-brands fa-cc-amex "></i>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mx-5">
+
+
+                <!-- Left Side -->
+                <div class="split ">
+                    <label for="card-name" class="form-label">Cardholder's Name *</label>
+                    <input type="text" class="form-control" id="card-name" formControlName="cardName">
+                    <label for="expdate" class="form-label">Expiration Date *</label>
+                    <input type="text" id="expdate" class="form-control mb-3" formControlName="expDate">
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="split">
+                    <label for="card-number" class="form-label">Card Number *</label>
+                    <input type="text" id="card-number" class="form-control" formControlName="cardNumber">
+                    <label for="cvc" class="form-label">CVC *</label>
+                    <input type="text" id="cvc" class="form-control" formControlName="cvc">
+                </div>
+            </div>
+
+            <!--Button -->
+
+            <div class="text-center">
+
+                <h4>Total: {{total | currency}}</h4>
+                <button class="btn btn-success" type="submit" [disabled]="!info.valid" (click)="orderSent()">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
